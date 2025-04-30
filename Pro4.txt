@@ -1,0 +1,60 @@
+login as: 2021ict125
+2021ict125@172.16.140.150's password:
+Last login: Mon Mar 17 11:37:33 2025 from 172.16.140.78
+[2021ict125@fedora ~]$ touch abc.csv
+[2021ict125@fedora ~]$ vi abc.csv
+[2021ict125@fedora ~]$ more abc.csv
+45,85,65,54
+64,52,65,41
+52,78,41,50
+[2021ict125@fedora ~]$ awk -F "," '{print $1}' abc.csv
+45
+64
+52
+[2021ict125@fedora ~]$ awk -F "," '{print $1","$2}' abc.csv
+45,85
+64,52
+52,78
+[2021ict125@fedora ~]$ cat abc.csv
+45,85,65,54
+64,52,65,41
+52,78,41,50
+[2021ict125@fedora ~]$ sed -e 's/85/72/g' abc.csv
+45,72,65,54
+64,52,65,41
+52,78,41,50
+[2021ict125@fedora ~]$ awk -F , '{print NF; exit}' abc.csv
+4
+[2021ict125@fedora ~]$ head -3 abc.csv
+45,85,65,54
+64,52,65,41
+52,78,41,50
+[2021ict125@fedora ~]$ head -2 abc.csv
+45,85,65,54
+64,52,65,41
+[2021ict125@fedora ~]$ tail -2 abc.csv
+64,52,65,41
+52,78,41,50
+[2021ict125@fedora ~]$ vi xyz.csv
+[2021ict125@fedora ~]$ more xyz.csv
+56      74      65
+54      82      45
+88      78      54
+12      54      24
+47      88      57
+[2021ict125@fedora ~]$ awk '{print}' xyz.csv
+56      74      65
+54      82      45
+88      78      54
+12      54      24
+47      88      57
+[2021ict125@fedora ~]$ head -n3 xyz.csv | tail -n1
+88      78      54
+[2021ict125@fedora ~]$ wc -l xyz.csv
+5 xyz.csv
+[2021ict125@fedora ~]$ head -n4 xyz.csv | grep '24'
+12      54      24
+[2021ict125@fedora ~]$ head -n5 xyz.csv | grep '88'
+88      78      54
+47      88      57
+[2021ict125@fedora ~]$ exit
